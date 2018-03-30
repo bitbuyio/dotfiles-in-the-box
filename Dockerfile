@@ -10,7 +10,6 @@ ENV TERM xterm-256color
 # Set locale to UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
-ENV LC_ALL en_US.UTF-8
 
 # Initialize
 RUN \
@@ -37,7 +36,10 @@ RUN \
     apt-get autoclean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# Add normal user
+
+# create user
 RUN useradd -ms /bin/bash ubuntu
+RUN echo 'voodev ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+ENV HOME=/home/ubuntu
 USER ubuntu
 WORKDIR /home/ubuntu
