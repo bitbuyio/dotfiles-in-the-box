@@ -23,8 +23,9 @@ RUN \
     git \
     curl \
     tmux \
-    python3 \
-    python3-setuptools \
+    python \
+    python-dev \
+    python-setuptools \
     apt-transport-https \
     ca-certificates \
     build-essential \
