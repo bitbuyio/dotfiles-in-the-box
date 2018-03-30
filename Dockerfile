@@ -39,7 +39,7 @@ RUN \
 
 # create user
 RUN useradd -ms /bin/bash ubuntu
-RUN echo 'voodev ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+RUN echo 'ubuntu ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 ENV HOME=/home/ubuntu
 USER ubuntu
 WORKDIR /home/ubuntu
